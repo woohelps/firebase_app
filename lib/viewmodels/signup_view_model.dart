@@ -1,23 +1,27 @@
 import 'package:firebase_app/constants/route_names.dart';
+import 'package:firebase_app/locator.dart';
 import 'package:firebase_app/services/authentication_service.dart';
 import 'package:firebase_app/services/dialog_service.dart';
 import 'package:firebase_app/services/navigation_service.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:firebase_app/locator.dart';
 import 'base_model.dart';
 
 class SignUpViewModel extends BaseModel {
-  final AuthenticationService _authenticationService =
-      locator<AuthenticationService>();
+  final AuthenticationService _authenticationService = locator<AuthenticationService>();
   final DialogService _dialogService = locator<DialogService>();
   final NavigationService _navigationService = locator<NavigationService>();
 
-  Future signUp({@required String email, @required String password}) async {
+  Future signUp({
+    @required String email,
+    @required String password,
+  }) async {
     setBusy(true);
 
     var result = await _authenticationService.signUpWithEmail(
-        email: email, password: password);
+      email: email,
+      password: password,
+    );
 
     setBusy(false);
     if (result is bool) {
