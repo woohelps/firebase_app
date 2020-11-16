@@ -37,6 +37,11 @@ dependencies:
   # provider architecture
   provider_architecture: ^1.0.3
 
+  # Firebase
+  firebase_core: ^0.5.2
+  firebase_auth: ^0.18.3
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
