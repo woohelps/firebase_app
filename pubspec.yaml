@@ -33,10 +33,12 @@ dependencies:
   get_it: ^3.0.0+1
 
   # provider
-  provider: ^3.2.0
+  provider: ^4.3.2+2
   # provider architecture
   provider_architecture: ^1.0.3
-
+  # Stacked Arch
+  stacked: ^1.6.0
+  stacked_services: ^0.4.3
   # Firebase
   firebase_core: ^0.5.2
   firebase_auth: ^0.18.3

@@ -2,7 +2,7 @@ import 'package:firebase_app/ui/shared/ui_helpers.dart';
 import 'package:firebase_app/ui/widgets/busy_button.dart';
 import 'package:firebase_app/ui/widgets/input_field.dart';
 import 'package:flutter/material.dart';
-import 'package:provider_architecture/provider_architecture.dart';
+import 'package:stacked/stacked.dart';
 import 'package:firebase_app/viewmodels/signup_view_model.dart';
 
 class SignUpView extends StatelessWidget {
@@ -11,8 +11,8 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelProvider<SignUpViewModel>.withConsumer(
-      viewModel: SignUpViewModel(),
+    return ViewModelBuilder<SignUpViewModel>.reactive(
+      viewModelBuilder: () => SignUpViewModel(),
       builder: (context, model, child) => Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -47,8 +47,12 @@ class SignUpView extends StatelessWidget {
                 children: [
                   BusyButton(
                     title: 'Sign Up',
+                    busy: model.busy,
                     onPressed: () {
-                      // TODO: Perform firebase login here
+                      model.signUp(
+                        email: emailController.text,
+                        password: passwordController.text,
+                      );
                     },
                   )
                 ],
