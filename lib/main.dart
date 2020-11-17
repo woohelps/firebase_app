@@ -1,5 +1,5 @@
 import 'package:firebase_app/ui/views/signup_view.dart';
-//import 'package:firebase_app/utils/firebase.dart';
+import 'package:firebase_app/utils/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_app/services/navigation_service.dart';
 import 'package:firebase_app/services/dialog_service.dart';
@@ -11,7 +11,7 @@ import 'locator.dart';
 
 void main() {
   // Register all the models and services before the app starts
-//  initFirebase();
+  initFirebase();
   setupLocator();
   runApp(MyApp());
 }
