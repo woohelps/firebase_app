@@ -41,9 +41,9 @@ dependencies:
   stacked_services: ^0.4.3
   # Firebase
 
-#  firebase_core: ^0.5.2
-#  firebase_auth: ^0.18.3
-  firebase_auth: ^0.16.1
+  firebase_core: ^0.5.2
+  firebase_auth: ^0.18.3
+
 
 
 dev_dependencies:
